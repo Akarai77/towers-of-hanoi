@@ -1,38 +1,131 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+*{
+    font-family: "Roboto", sans-serif;
+    user-select: none;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container{
+    margin: 1rem;
+    width: 95vw;
+    height: 95vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.time-taken{
+    padding: 5px 10px 5px 10px;
+    border: 1px solid black;
+    background-color: rgb(216, 212, 212);
+    border-radius: 10px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.pegs{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 5rem 0 0 0;
+    gap: 28.35rem;
 }
 
-.App-link {
-  color: #61dafb;
+.bases{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.base{
+    height: 5rem;
+    background-color: black;
+    transition: width 0.3s ease;
+}
+
+.peg{
+    width: 2rem;
+    color: aliceblue;
+    height: 22rem;
+    background-color: black;
+    border-radius: 20px 20px 0 0;
+}
+
+.discs{
+    border: 1px solid white;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
+}
+
+.disc{
+    height: 31px;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: red;
+}
+
+.button{
+    margin: 2rem 0 1rem 0;
+    bottom: 5rem;
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid red;
+    box-shadow: 5px 5px 20px black;
+    background-color: rgb(44, 28, 28);
+    transition: transform 0.3s ease,opacity 0.3s ease;
+    button{
+        font-size: 1.75rem;
+        background: none;
+        color: white;
+        cursor: pointer;
+    }
+}
+
+.button:hover{
+    background-color: red;
+    border: 2px solid black;
+    transform:scale3d(1.1,1.1,1.1);
+    color: black;
+}
+
+.button.valid{
+    cursor: pointer;
+    pointer-events: all;
+}
+
+.button.invalid{
+    pointer-events: none;
+    opacity: 0.6;
+    border: 2px solid grey;
+}
+
+.setDiscs{
+    display: flex;
+    padding: 1rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    input{
+        border: 1px solid black;
+        border-radius: 5px;
+        margin: 0 0 0 10px;
+        width: 5rem;
+        height: 100%;
+        text-align: center;
+    }
+}
+
+.err-msg{
+    color: red;
+}
+
+@media (max-width: 900px) {
+
+    .pegs {
+        gap: 13.1rem;
+        padding-left: 60px;
+        padding-right: 60px;
+    }
+
 }
